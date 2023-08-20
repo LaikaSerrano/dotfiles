@@ -17,6 +17,12 @@ return require('packer').startup(function(use)
 --		  vim.cmd('colorscheme rose-pine')
 --	  end
   --})
+  use{ 'anuvyklack/pretty-fold.nvim',
+   config = function()
+      require('pretty-fold').setup()
+   end
+}
+  use {'iamcco/markdown-preview.nvim'}
   use 'frazrepo/vim-rainbow'
   use 'lervag/vimtex'
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -42,7 +48,10 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+  use "savq/melange-nvim"
+  use 'rebelot/kanagawa.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'Mofiqul/dracula.nvim'
   use {
 	  'glepnir/dashboard-nvim',
 	  event = 'VimEnter',
@@ -66,4 +75,5 @@ return require('packer').startup(function(use)
 	  end,
 	  requires = {'nvim-tree/nvim-web-devicons'}
   }
+
 end)
